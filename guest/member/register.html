@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="/static/h-ui/js/H-ui.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+
+<link href="/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="/static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="/static/h-ui.admin/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>嘉宾注册</title>
+</head>
+<body>
+<div class="containBox" style="height: 969px;">
+    <div class="containBox-bg"></div>
+	
+	<div class="wap-container">
+		<div class="container ui-sortable">
+			<h1 style="text-align:center;">嘉宾注册</h1>
+			<p style="text-align:center;">会展管理系统</p>
+			<div class="panel panel-default">
+				<div class="panel-header">&nbsp;</div>
+				<div class="panel-body">
+					<form action="" method="post" class="form form-horizontal responsive" onsubmit="return false;" id="demoform" novalidate="novalidate">
+						<div class="row cl">
+							<label class="form-label col-xs-3">手机号码：</label>
+							<div class="formControls col-xs-8">
+								<input type="text" class="input-text" placeholder="" name="phone" id="phone" autocomplete="off">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-3">密码：</label>
+							<div class="formControls col-xs-8">
+								<input type="password" class="input-text" placeholder="6~20位大小写字母数字特殊字符" name="passowrd1" id="passowrd1">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-3">重复密码：</label>
+							<div class="formControls col-xs-8">
+								<input type="password" class="input-text" autocomplete="off" placeholder="请输入重复密码" name="passowrd2" id="passowrd2">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-3">邀请码：</label>
+							<div class="formControls col-xs-8">
+								<input type="password" class="input-text" autocomplete="off" placeholder="请填写邀请码" name="guest_code" id="guest_code">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-3">验证码：</label>
+							<div class="formControls col-xs-8">
+								<input type="password" class="input-text" autocomplete="off" placeholder="短信验证码" name="cell_code" id="cell_code" style="width:180px;">
+								<input type="button" class="btn btn-primary radius" style="margin-left:10px;" value="获取短信验证码">
+							</div>
+						</div>
+						
+						<div class="row cl">
+							<div class="col-xs-8 col-xs-offset-3">
+								<input class="btn btn-primary" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" onClick="modaldemo()">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-demo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content radius">
+			<div class="modal-header">
+				<h3 class="modal-title">提示</h3>
+				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+			</div>
+			<div class="modal-body">
+				<p>嘉宾注册成功!</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
+				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function modaldemo(){
+	$("#modal-demo").modal("show");
+}
+</script>
+</body>
+</html>
