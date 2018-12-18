@@ -110,7 +110,16 @@
 				"aaSorting": [
 					[1, "desc"]
 				], //默认第几个排序
-			});						
+			});
+			function datadel(){
+				layer.confirm("确认删除?",{
+					icon:1
+					,yes:function(index,layero){
+						layer.close(index);
+						layer.msg('删除成功!',{icon:1,time:1000});
+					}
+				});
+			}						
 			function article_del(obj, id) {
 				layer.confirm('确认要删除吗？', function(index) {
 					$.ajax({
