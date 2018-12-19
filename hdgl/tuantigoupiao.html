@@ -19,76 +19,89 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>添加活动</title>
+<title购票</title>
 <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" action="/hdgl/hdpz.html" id="form-admin-add" onsubmit="return false;">
+	<form class="form form-horizontal" id="form-admin-add" onsubmit="return false;">
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>票名：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+				<select class="select" name="xingcheng" size="1">
+				<option value="">请选择票</option>
+				<option value="0">科技参观</option>
+				<option value="1">展商风采</option>
+				<option value="2">游戏的路径</option>
+			</select>
+		</div>
+	</div>
+	
+
+	
 	<div class="row cl">
 		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>活动项目：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="输入项目名称" id="guest_name" name="guest_name">
-		</div>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="xingcheng" size="1">
+				<option value="">请选择票</option>
+				<option value="0">4D科技</option>
+				<option value="1">未来世界</option>
+				<option value="2">开发的科技</option>
+			</select>
+			</span> </div>
 	</div>
-	
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>活动时间：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="请输入活动时间" id="guest_phone" name="guest_phone">
-		</div>
-	</div>
-	
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>活动地点：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="请输入活动地点" id="guest_email" name="guest_email">
-		</div>
-	</div>
-	
 		<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>场次管理：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-			<select class="select" name="xingcheng" size="1">
-				<option value="">搭建管理</option>
-				<option value="0">*******</option>
-				<option value="1">******</option>
-				<option value="2"*****</option>
-			</select>
-			</span> </div>
-	</div>
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>场次管理：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-			<select class="select" name="xingcheng" size="1">
-				<option value="">请选择场次</option>
-				<option value="0">第一场</option>
-				<option value="1">第二场</option>
-				<option value="2">第三场</option>
-			</select>
-			</span> </div>
-	</div>
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>工作人员：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-			<select class="select" name="xingcheng" size="1">
-				<option value="">请选择</option>
-				<option value="0">小白</option>
-				<option value="1">小黄</option>
-				<option value="2">小晓</option>
-			</select>
-			</span> </div>
-	</div>
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3">活动简介：</label>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>价格：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<textarea name="" cols="" rows="" class="textarea"  placeholder="活动简介信息（100个字符以内）" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-			<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+			48元
 		</div>
 	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>购票数量</label>
+		<div class="formControls col-xs-8 col-sm-9">
+		<select class="select" name="xingcheng" size="1">
+				<option value="">请选择数量</option>
+				<option value="0">10</option>
+				<option value="1">20</option>
+				<option value="2">30</option>
+				<option value="2" >自定义</option>
+			</select>
+		</div>
+	</div>
+		<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机号码：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="" placeholder="请填写手机号码" id="guest_phone" name="guest_phone">
+		</div>
+	</div>
+
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>支付方式：</label>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="xingcheng" size="1">
+				<option value="">是否开具发票</option>
+				<option value="0">是</option>
+				<option value="1">否</option>
+			</select>
+			</span> </div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>支付方式：</label>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="xingcheng" size="1">
+				<option value="">请选择方式</option>
+				<option value="0">支付宝</option>
+				<option value="1">微信</option>
+				<option value="2">现金</option>
+			</select>
+			</span> </div>
+	</div>
+
+
 	<div class="row cl">
 		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<input class="btn btn-primary radius" onclick="showdialog();" type="submit" value="&nbsp;&nbsp;支付&nbsp;&nbsp;">
 		</div>
 	</div>
 	</form>
@@ -102,7 +115,7 @@
 				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
 			</div>
 			<div class="modal-body">
-				<p>活动添加成功</p>
+				<p>订单生成中,请稍后</p>
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
@@ -125,37 +138,9 @@
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript">
-   function showdialog(title,url,w,h){
-				layer.open({
-					type:2,
-					title:title,
-					content:url,
-					area:['800px', '400px'],
-					btn: ['提交','关闭'],
-					yes:function(index){
-						layer.close(index);
-						layer.msg('提交成功!',{icon:1,time:1000});
-					}
-				});
-			}
-
-function xwsh_edit(title,url,w,h){
-	layer.open({
-		type:2,
-		title:title,
-		content:url,
-		area:['800px', '500px'],
-		btn: ['提交','关闭'],
-		yes:function(index){
-			layer.close(index);
-			layer.msg('审核完成!',{icon:1,time:1000});
-		}
-	});
+function showdialog(){
+	$("#showdialog").modal("show");
 }
-
-
-
-
 $(function(){
 	$('.skin-minimal input').iCheck({
 		checkboxClass: 'icheckbox-blue',

@@ -19,21 +19,22 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>活动管理模块</title>
+<title>嘉宾管理</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
-	活动管理模块
+	嘉宾管理
 	<span class="c-gray en">&gt;</span>
-	活动配置
+	嘉宾信息管理
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
 
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
-			<a href="javascript:;" class="btn btn-secondary radius btn-new" data-type="new">新增项目活动</a>
+			<a href="javascript:;" class="btn btn-secondary radius btn-yao" data-type="yao">个人购票</a>
+			<a href="javascript:;" class="btn btn-secondary radius btn-new" data-type="new">团体购票</a>
 		</span>
 		<span class="r">共有数据：<strong>54</strong> 条</span>
 	</div>
@@ -43,42 +44,72 @@
 				<tr class="text-c">
 					
 					<th width="80">ID</th>
-					<th width="80">活动项目</th>
-					<th width="200">活动时间	</th>
-					<th width="200">活动地点</th>
-					<th>工作人员</th>
+					<th width="80">票名</th>
+					<th width="80">活动	</th>
+					<th width="80">币种</th>
+					<th width="80">价格</th>
+					<th width="80">总票数</th>	
+					<th>销售渠道</th>
+					<th>生效情况</th>
+					<th>有效时间</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr class="text-c">
 					<td>1</td>
-					<td id="fp1"><a onclick="yqmfp_edit('沙龙详情','detail.html','1','800','500')">沙龙</a></span></td>
-					<td class="text-l">2018/10/22 8:00am</td>
-					<td class="text-l">展馆北区</td>
-					<td id="fp1">小里</td>
-					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('栏目编辑','new.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td>科技参观</td>
+					<td class="text-l">4D动态体验</td>
+					<td class="text-l">人民币</td>
+					<td class="text-l">50元</td>
+					<td class="text-l">500张</td>
+					<td id="fp1">网上支付</td>
+					<td id="fp1">即刻生效</td>
+					<td id="fp1">2018年11月5号 -2018年11月9号</td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
-						<tr class="text-c">
+					<tr class="text-c">
 					<td>2</td>
-					<td id="fp1"><a onclick="yqmfp_edit('酒会详情','detail.html','1','800','500')">酒会</a></span></td>
-					<td class="text-l">2018/10/22 8:00am</td>
-					<td class="text-l">展馆北区</td>
-					<td id="fp1">小占</td>
-					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('栏目编辑','new.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td>展商风采</td>
+					<td class="text-l">未来世界</td>
+					<td class="text-l">人民币</td>
+					<td class="text-l">60元</td>
+					<td class="text-l">200张</td>
+					<td id="fp1">网上支付</td>
+					<td id="fp1">即刻生效</td>
+					<td id="fp1">2018年11月5号 -2018年11月9号</td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
-						<tr class="text-c">
+					<tr class="text-c">
 					<td>3</td>
-					<td id="fp1"><a onclick="yqmfp_edit('演讲详情','detail.html','1','800','500')">演讲</a></span></td>
-					<td class="text-l">2018/10/21 10:00am</td>
-					<td class="text-l">展馆西区</td>
-					<td id="fp1">小爱</td>
-					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('栏目编辑','new.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td>游戏的天地</td>
+					<td class="text-l">游戏世界</td>
+					<td class="text-l">人民币</td>
+					<td class="text-l">70元</td>
+					<td class="text-l">300张</td>
+					<td id="fp1">网上支付</td>
+					<td id="fp1">即刻生效</td>
+					<td id="fp1">2018年11月5号 -2018年11月9号</td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
-						
+					<tr class="text-c">
+					<td>4</td>
+					<td>科技参观</td>
+					<td class="text-l">开发的科技</td>
+					<td class="text-l">人民币</td>
+					<td class="text-l">80元</td>
+					<td class="text-l">100张</td>
+					<td id="fp1">网上支付</td>
+					<td id="fp1">激活后生效</td>
+					<td id="fp1">2018年12月5号 -2018年12月9号</td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+					
+				
 			</tbody>
 		</table>
 	</div>
@@ -100,10 +131,12 @@ function yqmfp_edit(title,url,id,w,h){
 		title:title,
 		content:url,
 		area:['800px', '500px'],
-		btn: ['关闭'],
+		btn: ['提交','关闭'],
 		yes:function(index){
+			var a = ["7zF78Hzfb6","8gTdk86Fsh","766Gscb5dD","oj9dhsk03"];
 			layer.close(index);
-		
+			$("#fp"+id).html("<span>"+a[id-1]+"</span>");
+			layer.msg('分配完成!',{icon:1,time:1000});
 		}
 	});
 }
@@ -111,19 +144,9 @@ $(function(){
 	$(document).on("click","body .btn-new , body .btn-yao",function(){
 		var event = $(this).data("type");
 		if("yao" == event){
-			layer_show("邀请嘉宾","yao.html",500,500);
+			layer_show("个体购票","goupiao.html",500,500);
 		}else if("new" == event){
-			layer.open({
-				type:2,
-				title:"新增项目",
-				content:'new.html',
-				area:['800px', '500px'],
-				btn: ['提交','关闭'],
-				yes:function(index){
-					layer.close(index);
-					layer.msg('提交成功!',{icon:1,time:1000});
-				}
-			});
+			layer_show("团体购票","tuantigoupiao.html",500,500);
 		}
 	});
 });
@@ -140,32 +163,16 @@ function system_category_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 /*系统-栏目-编辑*/
-function system_category_edit(title,url,id,w,h){
+	function system_category_edit(title,url,id,w,h){
 	layer_show(title,url,w,h);
+	layer.close(index);
 }
-function article_edit(title,url,id,w,h){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		area:['800px', '500px'],
-		content: url,
-		btn: ['提交','关闭'],
-		yes:function(index){
-			layer.close(index);
-			layer.msg('修改成功!',{icon:1,time:1000});
-		}
-	});
-}
-
-
-
-
 /*系统-栏目-删除*/
 function system_category_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: 'url',
+			url: '',
 			dataType: 'json',
 			success: function(data){
 				$(obj).parents("tr").remove();
@@ -177,20 +184,6 @@ function system_category_del(obj,id){
 		});
 	});
 }
-
-$(function(){
-	$(document).on("click","body .del-item",function(){
-		var el = $(this).parent().parent();
-		layer.confirm("确认要删除么?",{
-			icon:6
-			,yes:function(index,layero){
-				$(el).remove();
-				layer.close(index);
-			}
-		});
-	});
-});
-
 </script>
 </body>
 </html>

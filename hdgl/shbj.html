@@ -30,7 +30,7 @@
 </head>
 <body>
 <article class="page-container">
-	<form action="cbfzc.html" method="" class="form form-horizontal" id="form-member-add" >
+	<form action="/hdgl/sh.html" method="get" class="form form-horizontal" id="form-member-add">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>承办方：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -70,16 +70,7 @@
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">申请资料：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="btn-upload form-group">
-				<input class="input-text upload-url" type="text" name="uploadfile" id="uploadfile" readonly nullmsg="请添加附件！" style="width:200px">
-				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
-				<input type="file" multiple name="file-2" class="input-file">
-				</span> </div>
-		</div>
-		
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<label class="form-label col-xs-4 col-sm-3">审核意见</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" onKeyUp="$.Huitextarealength(this,100)"></textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
@@ -87,7 +78,7 @@
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-				<input class="btn btn-primary radius"  onclick="article_save_submit();" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+				<input class="btn btn-primary radius" id="tijiao" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
 			</div>
 		</div>
 	</form>
@@ -113,14 +104,28 @@ $(function(){
 	});
 	
 });
-   function article_save_submit(){
-   	
-   	setTimeout(function(){
-   		layer.msg('提交成功');
-   		layer.msg('已删除!',{icon:1,time:1000});
-   	},500)
-}
-   
+
+/*$(function(){
+	$(document).on("click","body #tijiao",function(){
+		layer.confirm('确定?', {icon: 1, title:'提示'}, function(index){
+  //do something
+  
+  layer.close(index);
+
+});
+	});
+});*/
+	$("#tijiao").validate({
+		eyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			//$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.layer.close(index);
+		}
+	});
+
 </script> 
 <!--/请在上方写此页面业务相关的脚本-->
 </body>
