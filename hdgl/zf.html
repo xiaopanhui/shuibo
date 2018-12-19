@@ -24,40 +24,50 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>资金使用申请</title>
+<title>支付</title>
 <meta name="keywords" content="big-data">
 <meta name="description" content="数博会后台管理">
 </head>
 <body>
-<article class="page-container">
-	<form action="" method="post" class="form form-horizontal" id="form-sqzw-add">
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用类别：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="输入使用类别" id="zsname" name="zsname">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+		<span class="c-gray en">&gt;</span>
+		支付及账单管理
+		<span class="c-gray en">&gt;</span>
+		支付
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container">
+		<form class="form form-horizontal" id="form-article-add">
+			<div id="tab-system" class="HuiTab">
+				<div class="tabBar cl">
+					<span>支付宝支付</span>
+					<span>微信支付</span>
+					<span>银行卡支付</span>
+					<span>境外卡支付</span>
+				</div>
+				<div class="tabCon">
+					<div class="row cl">
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp应付： 1200 元
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">
+							支付宝账号：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" id="website-Keywords" placeholder="输入支付宝账号" value="" class="input-text">
+						</div>
+					</div>
+				</div>
+				<div class="tabCon">
+				</div>
 			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用目的：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="输入使用目的" id="zsname" name="zsname">
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+					<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe63a;</i> 去支付</button>
+					<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+				</div>
 			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用金额：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="输入使用金额" id="zsname" name="zsname">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">备注：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="输入备注(选填)" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-			</div>
-		</div>
-	</form>
-</article>
+		</form>
+	</div>
 
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script> 
@@ -71,41 +81,17 @@
 <script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
-$(function(){
-	$('.skin-minimal input').iCheck({
-		checkboxClass: 'icheckbox-blue',
-		radioClass: 'iradio-blue',
-		increaseArea: '20%'
+	$(function(){
+		$('.skin-minimal input').iCheck({
+			checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+		$("#tab-system").Huitab({
+			index:0
+		});
 	});
-	
-	$("#form-sqzw-add").validate({
-		rules:{
-			zsname:{
-				required:true,
-				minlength:2,
-				maxlength:16
-			},
-			zw:{
-				required:true,
-			},
-			area:{
-				required:true,
-			},
-			size:{
-				required:true,
-			}
-		},
-		onkeyup:false,
-		focusCleanup:true,
-		success:"valid",
-		submitHandler:function(form){
-			//$(form).ajaxSubmit();
-			var index = parent.layer.getFrameIndex(window.name);
-			parent.layer.close(index);
-		}
-	});
-});
-</script> 
+	</script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>
 </html>

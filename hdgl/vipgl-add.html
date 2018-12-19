@@ -24,38 +24,66 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>资金使用申请</title>
+<title>VIP添加</title>
 <meta name="keywords" content="big-data">
 <meta name="description" content="数博会后台管理">
 </head>
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-sqzw-add">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>姓名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="输入姓名" id="zsname" name="zsname">
+            </div>
+        </div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用类别：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+            <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                <div class="radio-box">
+                    <input name="sex" type="radio" id="sex-1" checked>
+                    <label for="sex-1">男</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" id="sex-2" name="sex">
+                    <label for="sex-2">女</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" id="sex-3" name="sex">
+                    <label for="sex-3">保密</label>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>生日：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="输入使用类别" id="zsname" name="zsname">
+				<input type="text" class="input-text" value="" placeholder="输入生日" id="zsname" name="zsname">
 			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用目的：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="输入使用目的" id="zsname" name="zsname">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用金额：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="输入使用金额" id="zsname" name="zsname">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">备注：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="输入备注(选填)" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-			</div>
-		</div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>身份证号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="输入身份证号" id="zsname" name="zsname">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="输入手机号" id="mobile" name="mobile">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" placeholder="@" name="email" id="email">
+            </div>
+        </div>
+        <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="输入地址" id="zsname" name="zsname">
+                </div>
+            </div>
 	</form>
 </article>
 
@@ -93,7 +121,26 @@ $(function(){
 			},
 			size:{
 				required:true,
-			}
+            },
+            uploadfile:{
+				required:true,
+            },
+            username:{
+				required:true,
+				minlength:2,
+				maxlength:16
+			},
+			sex:{
+				required:true,
+			},
+			mobile:{
+				required:true,
+				isMobile:true,
+			},
+			email:{
+				required:true,
+				email:true,
+			},
 		},
 		onkeyup:false,
 		focusCleanup:true,
