@@ -27,47 +27,46 @@
 <article class="page-container">
 	<form class="form form-horizontal" id="form-admin-add" onsubmit="return false;">
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>信息类别：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-			<select class="select" size="1" name="zw">
-				<option value="1" selected>科技</option>
-				<option value="2">娱乐</option>
-				<option value="3">生活</option>
-			</select>
-			</span> </div>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>客户姓名：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="王单" id="guest_name" name="guest_name">
+		</div>
+	</div>
+	
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系电话：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="188****20" id="guest_phone" name="guest_phone">
+		</div>
+	</div>
+	
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="337*****2@163.com" id="guest_email" name="guest_email">
+		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>推送信息：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-			<select class="select" size="1" name="zw">
-				<option value="1" selected>信息1</option>
-				<option value="2">信息2</option>
-				<option value="3">信息3</option>
-			</select>
-			</span> </div>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>公司：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="小米科技有限公司" id="guest_company" name="guest_phone">
+		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>推送时间：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-			<select class="select" size="1" name="zw">
-				<option value="1" selected>立即推送</option>
-				<option value="2">一小时后</option>
-				<option value="3">两小时后</option>
-			</select>
-			</span> </div>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>职位：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="UI设计" id="guest_zw" name="guest_phone">
+		</div>
 	</div>
 	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>推送方式：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-			<select class="select" size="1" name="zw">
-				<option value="1" selected>邮箱</option>
-				<option value="2">信息</option>
-			</select>
-			</span> </div>
+		<label class="form-label col-xs-4 col-sm-3">备注：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<textarea name="" cols="" rows="" class="textarea"  placeholder="备注信息（100个字符以内）" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
+			<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+		</div>
 	</div>
 	</form>
 </article>
-
 <div id="showdialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content radius">
@@ -76,7 +75,7 @@
 				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
 			</div>
 			<div class="modal-body">
-				<p>新增嘉宾成功</p>
+				<p>信息录入成功</p>
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
