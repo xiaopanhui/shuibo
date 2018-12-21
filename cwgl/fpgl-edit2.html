@@ -24,44 +24,55 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>资金使用申请</title>
+<title>开票修改</title>
 <meta name="keywords" content="big-data">
 <meta name="description" content="数博会后台管理">
 </head>
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-sqzw-add">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>客户名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="腾讯计算机系统有限公司" id="zsname" name="zsname">
+            </div>
+        </div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>申请单位：</label>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>银行开户账号：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="华为技术有限公司" id="zsname" name="zsname">
+				<input type="text" class="input-text" value="62282402461069****" id="zsname" name="zsname">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用类别：</label>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>计量单位：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="非专项资金" id="zsname" name="zsname">
+				<input type="text" class="input-text" value="张" id="zsname" name="zsname">
 			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用目的：</label>
+        </div>
+        <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>单价：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="住宿安排" id="zsname" name="zsname">
+				<input type="text" class="input-text" value="500000" id="zsname" name="zsname">
 			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用金额：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="20万元" id="zsname" name="zsname">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">备注：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="输入备注(选填)" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-			</div>
-		</div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>数量：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="1" id="zsname" name="zsname">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>金额：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="500000" id="zsname" name="zsname">
+            </div>
+        </div>
+        <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>开票人：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="张三" id="zsname" name="zsname">
+                </div>
+            </div>
 	</form>
 </article>
 
@@ -99,7 +110,10 @@ $(function(){
 			},
 			size:{
 				required:true,
-			}
+            },
+            uploadfile:{
+				required:true,
+			},
 		},
 		onkeyup:false,
 		focusCleanup:true,
