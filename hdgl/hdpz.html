@@ -24,7 +24,7 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
-	活动管理模块
+	活动管理
 	<span class="c-gray en">&gt;</span>
 	活动配置
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
@@ -46,36 +46,44 @@
 					<th width="80">活动项目</th>
 					<th width="200">活动时间	</th>
 					<th width="200">活动地点</th>
+					<th>搭建管理</th>
+					<th>场次管理</th>
 					<th>工作人员</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr class="text-c">
-					<td>1</td>
-					<td id="fp1"><a onclick="yqmfp_edit('沙龙详情','detail.html','1','800','500')">沙龙</a></span></td>
-					<td class="text-l">2018/10/22 8:00am</td>
-					<td class="text-l">展馆北区</td>
-					<td id="fp1">小里</td>
-					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('栏目编辑','new.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-				</tr>
-						<tr class="text-c">
 					<td>2</td>
-					<td id="fp1"><a onclick="yqmfp_edit('酒会详情','detail.html','1','800','500')">酒会</a></span></td>
+					<td id="fp1" ><a onclick="yqmfp_edit('沙龙详情','detail.html','1','800','500')" title="查看简介">沙龙</a></span></td>
 					<td class="text-l">2018/10/22 8:00am</td>
 					<td class="text-l">展馆北区</td>
-					<td id="fp1">小占</td>
-					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('栏目编辑','new.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<td id="fp1">北区一号木材搭建</td>
+					<td id="fp1">第一场</td>
+					<td id="fp1">小里</td>
+					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('活动配置编辑','eiditnew.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 						<tr class="text-c">
 					<td>3</td>
-					<td id="fp1"><a onclick="yqmfp_edit('演讲详情','detail.html','1','800','500')">演讲</a></span></td>
+					<td id="fp1"><a title="查看简介" onclick="yqmfp_edit('酒会详情','detail2.html','1','800','500')">酒会</a></span></td>
+					<td class="text-l">2018/10/22 8:00am</td>
+					<td class="text-l">展馆北区</td>
+					<td id="fp1">北区一号木材搭建</td>
+					<td id="fp1">第二场</td>
+					<td id="fp1">小占</td>
+					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('酒会配置编辑','eiditnew2.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+						<tr class="text-c">
+					<td>1</td>
+					<td id="fp1"><a title="查看简介" onclick="yqmfp_edit('演讲详情','detail1.html','1','800','500')">演讲</a></span></td>
 					<td class="text-l">2018/10/21 10:00am</td>
 					<td class="text-l">展馆西区</td>
+					<td id="fp1">北区一号木材搭建</td>
+					<td id="fp1">第二场</td>
 					<td id="fp1">小爱</td>
-					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('栏目编辑','new.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<td class="f-14"><a title="编辑" href="javascript:;"  onclick="article_edit('活动配置编辑','eiditnew1.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')"  class="del-item"  style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 						
@@ -111,11 +119,11 @@ $(function(){
 	$(document).on("click","body .btn-new , body .btn-yao",function(){
 		var event = $(this).data("type");
 		if("yao" == event){
-			layer_show("邀请嘉宾","yao.html",500,500);
+			layer_show("邀请嘉宾","new.html",500,500);
 		}else if("new" == event){
 			layer.open({
 				type:2,
-				title:"新增项目",
+				title:"新增项目活动",
 				content:'new.html',
 				area:['800px', '500px'],
 				btn: ['提交','关闭'],
@@ -128,11 +136,11 @@ $(function(){
 	});
 });
 $('.table-sort').dataTable({
-	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+	"aaSorting": [[0, "asc" ]],//默认第几个排序
 	"bStateSave": true,//状态保存
 	"aoColumnDefs": [
 	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-	  {"orderable":false,"aTargets":[0,4]}// 制定列不参与排序
+	  {"orderable":false,"aTargets":[1]}// 制定列不参与排序
 	]
 });
 /*系统-栏目-添加*/

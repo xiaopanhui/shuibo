@@ -19,61 +19,46 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>添加行程-嘉宾邀请</title>
+<title>小王的座位</title>
 <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-admin-add" onsubmit="return false;">
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>开票总金额：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="输入金额" id="guest_name" name="guest_name">
+	<form class="form form-horizontal" id="form-admin-add" ">
+			<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>客户名称：</label>
+		<div class="formControls col-xs-8 col-sm-9" style="width: 180px;">
+			<input type="text" class="input-text" value="小王"  id="guest_phone" name="guest_phone">
 		</div>
 	</div>
 
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>开票数量：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="输入金额" id="guest_name" name="guest_name">
-		</div>
-	</div>
-		<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>单张发票金额：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="输入单张发票金额" id="guest_name" name="guest_name">
-		</div>
-	</div>
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3">注：</label>
-		发票总金额不得大于实际支付的金额
+		<div class="row cl" style="padding:100,50,20,10">
+		<label class="form-label col-xs-4 col-sm-3"  ><span class="c-red">*</span>所在排：</label>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="xingcheng" size="1">
+				<option value="">1排</option>
+				<option value="0">1排</option>
+				<option value="1">2排</option>
+				<option value="2">3排</option>
+			</select>
+			</span> </div>
 	</div>
 	<div class="row cl">
-		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-			<input class="btn btn-primary radius" onclick="showdialog();" type="submit" value="&nbsp;&nbsp;确定&nbsp;&nbsp;">
-		</div>
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>座位列：</label>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="xingcheng" size="1">
+				<option value="">2座</option>
+				<option value="0">1座</option>
+				<option value="1">2座</option>
+				<option value="2">3座</option>
+			</select>
+			</span> </div>
 	</div>
+
 	</form>
 </article>
 
-<div id="showdialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content radius">
-			<div class="modal-header">
-				<h3 class="modal-title">提示</h3>
-				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
-			</div>
-			<div class="modal-body">
-				<p>邀请嘉宾成功</p>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
-				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-			</div>
-		</div>
-	</div>
-</div>
 
 <!--_footer 作为公共模版分离出去--> 
 <script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script> 
@@ -88,13 +73,25 @@
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript">
-function showdialog(){
-	layer.confirm('确定生成发票?', {icon: 1, title:'提示'}, function(index){
-  //do something
- 
-  layer.close(index);
-});
+
+
+function xwsh_edit(title,url,w,h){
+	layer.open({
+		type:2,
+		title:title,
+		content:url,
+		area:['800px', '500px'],
+		btn: ['提交','关闭'],
+		yes:function(index){
+			layer.close(index);
+			layer.msg('审核完成!',{icon:1,time:1000});
+		}
+	});
 }
+
+
+
+
 $(function(){
 	$('.skin-minimal input').iCheck({
 		checkboxClass: 'icheckbox-blue',

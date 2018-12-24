@@ -33,7 +33,7 @@
 
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
-			<a href="javascript:;" class="btn btn-secondary radius btn-new" data-type="new">新增客户座位</a>
+			<a href="javascript:;" class="btn btn-secondary radius btn-new" onclick="addUser('座位添加','UserAddnew.html','500px','400px')">客户座位配置</a>
 		</span>
 		<span class="r">共有数据：<strong>54</strong> 条</span>
 	</div>
@@ -43,40 +43,33 @@
 				<tr class="text-c">
 					
 					<th width="80">ID</th>
-					<th width="80">嘉宾姓名</th>
+					<th width="80">客户姓名</th>
 					<th width="200">座位位置</th>
-					<th>选座方式</th>
+					<th width="200">选座方式</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="text-c">
+				<tr class="text-c" >
 					<td>1</td>
 					<td>小王</td>
-					<td class="text-l">1排2座</td>
+					<td>1排2座</td>
 			
-					<td id="fp1"><a onclick="yqmfp_edit('app选坐','new1.html','1','800','500')" href="#">APP选座  </a><a onclick="yqmfp_edit('app选坐','new1.html','1','800','500')" href="#">   微信公众号选座</a></td>
-					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('座位编辑','new1.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td id="fp1"><a onclick="yqmfp_edit('app选坐','seatnew1.html','500px','300px')" href="#">APP选座 &nbsp; </a><a onclick="yqmfp_edit('app选坐','seatnew1.html','1','500px','300px')" href="#"> &nbsp;  微信公众号选座</a></td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('座位编辑','seatnew1.html','500px','300px')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						</td>
 				</tr>
-						<tr class="text-c">
+						<tr class="text-c">	
 					<td>2</td>
 					<td>小里</td>
-					<td class="text-l">1排3座</td>
+					<td>1排3座</td>
 			
-					<td id="fp1"><a onclick="yqmfp_edit('app选坐','new1.html','1','800','500')" href="#">APP选座  </a><a onclick="yqmfp_edit('app选坐','new1.html','1','800','500')" href="#">   微信公众号选座</a></td>
-					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('座位编辑','new1.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td id="fp2"><a onclick="yqmfp_edit('app选坐','seatnew2.html','500px','300px')" href="#">APP选座  &nbsp;</a><a onclick="yqmfp_edit('app选坐','seatnew2.html','1','800','500')" href="#">&nbsp;   微信公众号选座</a></td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('座位编辑','seatnew2.html','500px','300px')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						</td>
 				</tr>
-				<tr class="text-c">
-					<td>3</td>
-					<td>小刘</td>
-					<td class="text-l">2排3座</td>			
-					<td id="fp1"><a onclick="yqmfp_edit('app选坐','new1.html','1','800','500')" href="#">APP选座  </a><a onclick="yqmfp_edit('app选坐','new1.html','1','800','500')" href="#">   微信公众号选座</a></td>
-					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('座位编辑','new1.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-				</tr>
-			</tbody>
+			
+			</tbody>才
 		</table>
 	</div>
 </div>
@@ -96,32 +89,23 @@ function yqmfp_edit(title,url,id,w,h){
 		type:2,
 		title:title,
 		content:url,
-		area:['800px', '500px'],
+		area:['500px', '400px'],
 		btn: ['提交','关闭'],
 		yes:function(index){
 			var a = ["7zF78Hzfb6","8gTdk86Fsh","766Gscb5dD","oj9dhsk03"];
 			layer.close(index);
-			$("#fp"+id).html("<span>"+a[id-1]+"</span>");
+			
 			layer.msg('分配完成!',{icon:1,time:1000});
 		}
 	});
 }
-$(function(){
-	$(document).on("click","body .btn-new , body .btn-yao",function(){
-		var event = $(this).data("type");
-		if("yao" == event){
-			layer_show("邀请嘉宾","new1.html",500,500);
-		}else if("new" == event){
-			layer_show("邀请嘉宾","new1.html",500,500);
-		}
-	});
-});
+
 $('.table-sort').dataTable({
-	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+	"aaSorting": [[ 0, "desc" ]],//默认第几个排序
 	"bStateSave": true,//状态保存
 	"aoColumnDefs": [
 	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-	  {"orderable":false,"aTargets":[0,4]}// 制定列不参与排序
+	  {"orderable":false,"aTargets":[2,3,4]}// 制定列不参与排序
 	]
 });
 /*系统-栏目-添加*/
@@ -129,8 +113,19 @@ function system_category_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 /*系统-栏目-编辑*/
-function system_category_edit(title,url,id,w,h){
-	layer_show(title,url,w,h);
+function system_category_edit(title,url,w,h){
+	layer.open({
+		type:2,
+		title:title,
+		content:url,
+		area:[w, h],
+		btn:['提交','关闭'],
+		yes:function(index){
+			layer.close(index);
+			layer.msg('修改!',{icon:1,time:1000});
+			
+		}
+	})
 }
 /*系统-栏目-删除*/
 function system_category_del(obj,id){
@@ -151,6 +146,22 @@ function system_category_del(obj,id){
 		
 	});
 }
+
+function addUser(title,url,w,h){
+	layer.open({
+		type:2,
+		title:title,
+		content:url,
+		area:[w, h],
+		btn: ['提交','关闭'],
+		yes:function(index){
+			layer.close(index);
+			layer.msg('添加成功!',{icon:1,time:1000});
+		}
+	});
+}
+
+
 </script>
 </body>
 </html>

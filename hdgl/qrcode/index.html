@@ -36,6 +36,8 @@
 		<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
 			<a href="javascript:;" class="btn btn-secondary radius btn-yao" data-type="yao">生成多张发票</a>
+			<a class="btn btn-secondary radius" data-title="返回上一级" data-href="/hdgl/hdpwgl.html" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe67d;</i> 返回上一级</a>
+
 		</span>
 		<span class="r">共有数据：<strong>54</strong> 条</span>
 	</div>
@@ -53,7 +55,7 @@
 				
 				<th width="130">点击生成电子发票</th>
 				<th width="130">购票金额</th>
-				<th width="100">操作</th>
+				<th width="100">生成多张发票</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -66,30 +68,20 @@
 				<td><button class="btn btn-link show-qrocde" title="显示发票"><i class="Hui-iconfont Hui-iconfont-2code" style="font-size:20px"></i></button></td>
 				<td>200元</td>
 				<td class="td-manage">
-				 <a title="重新生成发票" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont" style="font-size:20px;">&#xe6f7;</i></a></td>
+				 <a title="重新生成发票" href="javascript:;" onclick="admin_del('票务编辑','fp.html','1','400','480')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont" style="font-size:20px;">&#xe6f7;</i></a></td>
 			</tr>
 				<tr class="text-c">
 				<td><input type="checkbox" value="1" name=""></td>
 				<td>2</td>
 				<td>小刘</td>
 				<td>展商风采</td>
-				<td>科技展览</td>
+				<td>未来世界</td>
 				<td><button class="btn btn-link show-qrocde" title="显示发票"><i class="Hui-iconfont Hui-iconfont-2code" style="font-size:20px"></i></button></td>
 				<td>50元</td>
 				<td class="td-manage">
-				 <a title="重新生成发票" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont" style="font-size:20px;">&#xe6f7;</i></a></td>
+				 <a title="重新生成发票" href="javascript:;" onclick="admin_del('票务编辑','fp.html','1','400','480')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont" style="font-size:20px;">&#xe6f7;</i></a></td>
 			</tr>
-				<tr class="text-c">
-				<td><input type="checkbox" value="1" name=""></td>
-				<td>3</td>
-				<td>小云</td>
-				<td>科技参观</td>
-				<td>4D动态体验</td>
-				<td><button class="btn btn-link show-qrocde" title="显示发票"><i class="Hui-iconfont Hui-iconfont-2code" style="font-size:20px"></i></button></td>
-				<td>100元</td>
-				<td class="td-manage">
-				 <a title="重新生成发票" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont" style="font-size:20px;">&#xe6f7;</i></a></td>
-			</tr>
+		
 			
 		</tbody>
 	</table>
@@ -117,16 +109,22 @@
 function admin_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
-/*管理员-删除*/
-function admin_del(obj,id){
-	layer.confirm('重新生成电子发票？',function(index){
-		layer.msg('已重新生成电子发票!',{icon:1,time:1000});
-	});
-}
+
 
 /*管理员-编辑*/
-function admin_edit(title,url,id,w,h){
-	layer_show(title,url,w,h);
+function admin_del(title,url,id,w,h){
+	layer.open({
+		type:2,
+		title:title,
+		content:url,
+		area:['500px', '400px'],
+	    btn: ['提交','关闭'],
+				yes:function(index){
+					layer.close(index);
+					layer.msg('已生成多张发票');
+					
+				}
+	});
 }
 /*管理员-停用*/
 function admin_stop(obj,id){

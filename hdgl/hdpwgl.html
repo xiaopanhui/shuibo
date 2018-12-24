@@ -19,22 +19,25 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>嘉宾管理</title>
+<title>活动管理</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
-	嘉宾管理
+	活动管理
 	<span class="c-gray en">&gt;</span>
-	嘉宾信息管理
+	活动配置
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
 
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
-			<a href="javascript:;" class="btn btn-secondary radius btn-yao" data-type="yao">个人购票</a>
-			<a href="javascript:;" class="btn btn-secondary radius btn-new" data-type="new">团体购票</a>
+			<a href="javascript:;" class="btn btn-secondary radius btn-yao" data-type="personal">个人购票</a>
+			<a href="javascript:;" class="btn btn-secondary radius btn-new" data-type="team">团体购票</a>
+			<a class="btn btn-secondary radius" data-title="订单统计" data-href="/hdgl/qrcode/" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe61e;</i> 客户购票信息</a>
+			<a class="btn btn-secondary radius" data-title="退票机制" data-href="/hdgl/tpjz.html" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe61e;</i> 退票机制</a>
+
 		</span>
 		<span class="r">共有数据：<strong>54</strong> 条</span>
 	</div>
@@ -63,7 +66,7 @@
 					<td class="text-l">人民币</td>
 					<td class="text-l">50元</td>
 					<td class="text-l">500张</td>
-					<td id="fp1">网上支付</td>
+					<td id="fp1">官网销售</td>
 					<td id="fp1">即刻生效</td>
 					<td id="fp1">2018年11月5号 -2018年11月9号</td>
 					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
@@ -74,40 +77,15 @@
 					<td>展商风采</td>
 					<td class="text-l">未来世界</td>
 					<td class="text-l">人民币</td>
-					<td class="text-l">60元</td>
+					<td class="text-l">50元</td>
 					<td class="text-l">200张</td>
-					<td id="fp1">网上支付</td>
+					<td id="fp1">官网销售</td>
 					<td id="fp1">即刻生效</td>
 					<td id="fp1">2018年11月5号 -2018年11月9号</td>
-					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit1.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
-					<tr class="text-c">
-					<td>3</td>
-					<td>游戏的天地</td>
-					<td class="text-l">游戏世界</td>
-					<td class="text-l">人民币</td>
-					<td class="text-l">70元</td>
-					<td class="text-l">300张</td>
-					<td id="fp1">网上支付</td>
-					<td id="fp1">即刻生效</td>
-					<td id="fp1">2018年11月5号 -2018年11月9号</td>
-					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-				</tr>
-					<tr class="text-c">
-					<td>4</td>
-					<td>科技参观</td>
-					<td class="text-l">开发的科技</td>
-					<td class="text-l">人民币</td>
-					<td class="text-l">80元</td>
-					<td class="text-l">100张</td>
-					<td id="fp1">网上支付</td>
-					<td id="fp1">激活后生效</td>
-					<td id="fp1">2018年12月5号 -2018年12月9号</td>
-					<td class="f-14"><a title="编辑" href="javascript:;" onclick="system_category_edit('票务编辑','edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-				</tr>
+				
 					
 				
 			</tbody>
@@ -143,9 +121,9 @@ function yqmfp_edit(title,url,id,w,h){
 $(function(){
 	$(document).on("click","body .btn-new , body .btn-yao",function(){
 		var event = $(this).data("type");
-		if("yao" == event){
+		if("personal" == event){
 			layer_show("个体购票","goupiao.html",500,500);
-		}else if("new" == event){
+		}else if("team" == event){
 			layer_show("团体购票","tuantigoupiao.html",500,500);
 		}
 	});

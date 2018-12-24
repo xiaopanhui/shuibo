@@ -25,40 +25,46 @@
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-admin-add" ">
-			<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>客户名称：</label>
-		<div class="formControls col-xs-8 col-sm-9" style="width: 180px;">
-			<input type="text" class="input-text" value="" placeholder="请输入客户名称" id="guest_phone" name="guest_phone">
+	<div class="form form-horizontal" id="form-admin-add" onsubmit="return false;">
+	
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>时间：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+				2018/10/22 8:00am
+		</div>
+	</div>
+	
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>地点：</label>
+			展馆北区
+	</div>
+
+
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">活动简介：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<p>	为社会团体或个人举行纪念和庆祝生日，或联络和增进感情而用</p>
+			
 		</div>
 	</div>
 
-		<div class="row cl" style="padding:100,50,20,10">
-		<label class="form-label col-xs-4 col-sm-3"  ><span class="c-red">*</span>所在排：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-			<select class="select" name="xingcheng" size="1">
-				<option value="">座位排</option>
-				<option value="0">1排</option>
-				<option value="1">2排</option>
-				<option value="2">3排</option>
-			</select>
-			</span> </div>
 	</div>
-	<div class="row cl">
-		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>座位列：</label>
-		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
-			<select class="select" name="xingcheng" size="1">
-				<option value="">座位号</option>
-				<option value="0">1座</option>
-				<option value="1">2座</option>
-				<option value="2">3座</option>
-			</select>
-			</span> </div>
-	</div>
-
-	</form>
 </article>
 
+<div id="showdialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content radius">
+			<div class="modal-header">
+				<h3 class="modal-title">提示</h3>
+				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+			</div>
+			<div class="modal-body">
+				<p>活动添加成功</p>
+			</div>
+			
+		</div>
+	</div>
+</div>
 
 <!--_footer 作为公共模版分离出去--> 
 <script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script> 
@@ -73,20 +79,9 @@
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript">
-
-
-function xwsh_edit(title,url,w,h){
-	layer.open({
-		type:2,
-		title:title,
-		content:url,
-		area:['800px', '500px'],
-		btn: ['提交','关闭'],
-		yes:function(index){
-			layer.close(index);
-			layer.msg('审核完成!',{icon:1,time:1000});
-		}
-	});
+   function showdialog(){
+	$("#showdialog").modal("show");
+	
 }
 
 
