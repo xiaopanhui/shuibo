@@ -33,25 +33,12 @@
 	<div class="text-c">
 		<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
 	 <span class="select-box inline">
-		<select name="" class="select">
-			<option value="0">分类查询</option>
-			<option value="1">十九大新闻</option>
-			<option value="2">展商新闻</option>
-			<option value="2">其他新闻</option>
-		</select>
 		</span> 日期范围：
 		<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
 		-
 		<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
-		<input type="text" name="" id="" placeholder=" 新闻标题" style="width:250px" class="input-text">
-		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜新闻</button>
 	</div>
-		<div class="cl pd-5 bg-1 bk-gray mt-20">
-		<span class="l">
-			<a href="javascript:;" onclick="xwsh_add('新闻','article-add.html','2','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe6e2;</i>添加新闻</a>
-		</span>
-		<span class="r">共有数据：<strong>3</strong> 条</span>
-	</div>
+	
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
@@ -69,7 +56,7 @@
 			<tbody>
 				<tr class="text-c">
 					<td>10001</td>
-					<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','learn.html','1000','500')" title="查看">学习十九大</u></td>
+					<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','detail.html','1000','500')" title="查看">学习十九大</u></td>
 					<td>十九大新闻</td>
 					<td>小李</td>
 					<td>2014-6-11 11:11:42</td>
@@ -79,7 +66,7 @@
 				</tr>
 				<tr class="text-c">
 					<td>10002</td>
-					<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','learn1.html','1000','500')" title="查看">详解“数博大道”</u></td>
+					<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','detail1.html','1000','500')" title="查看">详解“数博大道”</u></td>
 					<td>展会新闻</td>
 					<td>小白</td>
 					<td>2014-6-11 11:11:42</td>
