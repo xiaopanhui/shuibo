@@ -36,11 +36,13 @@
 	
 		</span> 日期范围：
 		<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
+		-
 		<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
 		<input type="text" name="" id="" placeholder=" 新闻标题" style="width:250px" class="input-text">
-		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜新闻</button><br>
+		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜新闻</button>
+		
+
 	</div>
-			
 		<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
 			<a href="javascript:;" onclick="xwsh_add('新闻','article-add.html','2','700','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>添加新闻</a>
@@ -48,15 +50,7 @@
 		<span class="r">共有数据：<strong>3</strong> 条</span>
 	</div>
 	<div class="mt-20">
-			<div class="demoTable">
-					搜索ID：
-					<div class="layui-inline">
-					  <input class="layui-input" name="id" id="demoReload" autocomplete="off">
-					</div>
-					<button class="layui-btn" data-type="reload">搜索</button>
-				  </div>
-
-		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive" id="LAY_table_user">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
 				<tr class="text-c">
 					<th width="25"><input type="checkbox" name="" value=""></th>
@@ -221,42 +215,6 @@ function xwsh_add(title,url,w,h){
 		}
 	});
 }
-layui.use('table', function(){
-  var table = layui.table;
-  
-  //方法级渲染
-  table.render({
-    elem: '#LAY_table_user'
-    ,url: '/xwgl/article-list.html'
-    ,cols: [[
-      {checkbox: true, fixed: true}
-      ,{field:'id', title: 'ID', width:80, sort: true, fixed: true}
-     
-    ]]
-    ,id: 'testReload'
-    ,page: true
-    ,height: 315
-  });
-  
-  var $ = layui.$, active = {
-    reload: function(){
-      var demoReload = $('#demoReload');
-      
-      //执行重载
-      table.reload('testReload', {
-        page: {
-          curr: 1 //重新从第 1 页开始
-        }
-        ,where: {
-          key: {
-            id: demoReload.val()
-          }
-        }
-      });
-    }
-  };
-
-
 
 </script> 
 </body>
