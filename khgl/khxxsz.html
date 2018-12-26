@@ -54,10 +54,10 @@
 					<td>1</td>
 					<td>小王</td>
 					<td class="text-l">187****20</td>
-					<td class="text-l">A</td>
-					<td class="text-l">特邀</td>
+					<td class="text-l">一级</td>
+					<td class="text-l">演讲客户</td>
 					<td class="text-l">王立</td>
-					<td class="text-l"></td>
+					<td class="text-l">VIP通道</td>
 					<td class="f-14"><a title="编辑" href="javascript:;" onclick="yqmfp_edit('修改客户信息','khxx_edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
@@ -65,10 +65,10 @@
 					<td>2</td>
 					<td>王五</td>
 					<td class="text-l">188****20</td>
-					<td class="text-l">A</td>
-					<td class="text-l">特邀</td>
-					<td class="text-l">王立</td>
-					<td class="text-l"></td>
+					<td class="text-l">二级</td>
+					<td class="text-l">参会客户</td>
+					<td class="text-l">王美</td>
+					<td class="text-l">专车接送</td>
 					<td class="f-14"><a title="编辑" href="javascript:;" onclick="yqmfp_edit('修改客户信息','khxx_edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
@@ -76,10 +76,10 @@
 					<td>3</td>
 					<td>王单</td>
 					<td class="text-l">188****20</td>
-					<td class="text-l">B</td>
-					<td class="text-l">普通</td>
-					<td class="text-l">王立</td>
-					<td class="text-l"></td>
+					<td class="text-l">三级</td>
+					<td class="text-l">普通客户</td>
+					<td class="text-l">小丽</td>
+					<td class="text-l">普通通道</td>
 					<td class="f-14"><a title="编辑" href="javascript:;" onclick="yqmfp_edit('修改客户信息','khxx_edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
@@ -87,10 +87,10 @@
 					<td>4</td>
 					<td>王六</td>
 					<td class="text-l">188****20</td>
-					<td class="text-l">B</td>
-					<td class="text-l">普通</td>
-					<td class="text-l">王立</td>
-					<td class="text-l"></td>
+					<td class="text-l">三级</td>
+					<td class="text-l">普通客户</td>
+					<td class="text-l">小张</td>
+					<td class="text-l">普通通道</td>
 					<td class="f-14"><a title="编辑" href="javascript:;" onclick="yqmfp_edit('修改客户信息','khxx_edit.html','1','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 						<a title="删除" href="javascript:;" onclick="system_category_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
@@ -131,11 +131,11 @@ $(function(){
 	});
 });
 $('.table-sort').dataTable({
-	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+	"aaSorting": [[ 0, "desc" ]],//默认第几个排序
 	"bStateSave": true,//状态保存
 	"aoColumnDefs": [
 	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-	  {"orderable":false,"aTargets":[0,4]}// 制定列不参与排序
+	  {"orderable":false,"aTargets":[1,4]}// 制定列不参与排序
 	]
 });
 /*系统-栏目-添加*/
