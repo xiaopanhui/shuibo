@@ -20,19 +20,25 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-		<title>发票管理</title>
+		<title>资金使用申请</title>
 	</head>
 
 	<body>
 		<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 资金管理 <span class="c-gray en">&gt;</span>
-			发票管理
+			资金使用申请
 			<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
 			 title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
 		</nav>
 		<div class="page-container">
 			<div class="text-c">
-					
-				 日期范围：
+				<!--<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>-->
+				<span class="select-box inline">
+					<select name="" class="select">
+						<option value="0">全部分类</option>
+						<option value="1">专项资金</option>
+						<option value="2">非转项资金</option>
+					</select>
+				</span> 日期范围：
 				<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate"
 				 style="width:120px;"> -
 				<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate"
@@ -41,44 +47,33 @@
 				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i
-						 class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-						 <a class="btn btn-primary radius" href="javascript:;" onclick="sqzjmb_add('添加模板','fpglmb-add.html','800','500')"><i class="Hui-iconfont">&#xe72d;</i> 添加模板</a>
-						 <a class="btn btn-primary radius" href="javascript:;" onclick="sqzj_add('开票登记','fpgl-add.html','800','500')"><i class="Hui-iconfont">&#xe600;</i> 开票登记</a>
-						 </span><span class="select-box inline">
-								<select name="" class="select">
-									<option value="0">选择模板</option>
-									<option value="1">模板一</option>
-									<option value="2">模板二</option>
-								</select>
-								</span> <span class="r">共有数据：<strong>2</strong> 条</span> </div>
+						 class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" href="javascript:;" onclick="sqzj_add('资金使用预算录入','zjsylr-add.html','800','500')"><i
+						 class="Hui-iconfont">&#xe600;</i> 录入</a> </span> <span class="r">共有数据：<strong>2</strong> 条</span> </div>
 			<div class="mt-20">
 				<table class="table table-border table-bordered table-hover table-bg table-sort">
 					<thead>
 						<tr class="text-c">
 							<th width="25"><input type="checkbox" name="" value=""></th>
 							<th width="80">ID</th>
-							<th width="140">发票名称</th>
-							<th width="140">客户名称</th>
-							<th width="120">银行开户账号</th>
-                            <th width="120">金额</th>
-                            <th width="120">开票人</th>
-                            <th width="120">开票日期</th>
-                            <th width="80">操作</th>
+							<th width="140">开展活动</th>
+							<th width="100">类别</th>
+							<th width="100">预算金额</th>
+							<th width="100">剩余金额</th>
+							<th width="120">录入时间</th>
+							<th width="120">操作</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr class="text-c">
 							<td><input type="checkbox" value="" name=""></td>
 							<td>001</td>
-							<td>发票一</td>
-							<td>腾讯计算机系统有限公司</u></td>
-							<td>62282402461069****</td>
-                            <td>50万元</td>
-                            <td>张三</td>
-                            <td>2019-01-11 11:10:42</td>
+							<td>4D动态体验</u></td>
+							<td>专项资金</td>
+							<td>100万元</td>
+							<td>50万元</td>
+							<td>2019-01-11 11:10:42</td>
 							<td class="f-14 td-manage">
-								<a style="text-decoration:none" class="ml-5" href="javascript:;" onClick="money_huabo(this,'1')" title="打印"><i class="Hui-iconfont">&#xe652;</i></a>
-								<a title="编辑" href="javascript:;" onclick="sqzj_edit('开票修改','fpgl-edit2.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> 
+								<a title="编辑" href="javascript:;" onclick="zjsq_edit('修改资金使用预算','zjsylr-edit2.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 								<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i
 									 class="Hui-iconfont">&#xe6e2;</i></a>
 							</td>
@@ -86,15 +81,13 @@
 						<tr class="text-c">
 							<td><input type="checkbox" value="" name=""></td>
 							<td>002</td>
-							<td>发票二</td>
-							<td>华为技术有限公司</u></td>
-							<td>62282402461069****</td>
-                            <td>20万元</td>
-                            <td>李四</td>
+							<td>未来世界</u></td>
+							<td>非专项资金</td>
+							<td>80万元</td>
+							<td>80万元</td>
 							<td>2019-01-11 11:11:42</td>
 							<td class="f-14 td-manage">
-								<a style="text-decoration:none" class="ml-5" href="javascript:;" onClick="money_huabo(this,'1')" title="打印"><i class="Hui-iconfont">&#xe652;</i></a>
-								<a title="编辑" href="javascript:;" onclick="sqzj_edit('开票修改','fpgl-edit.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> 
+								<a title="编辑" href="javascript:;" onclick="zjsq_edit('修改资金使用预算','zjsylr-edit.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 								<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i
 									 class="Hui-iconfont">&#xe6e2;</i></a>
 							</td>
@@ -115,6 +108,11 @@
 		<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="	/lib/laypage/1.2/laypage.js"></script>
 		<script type="text/javascript">
+			$('.table-sort').dataTable({
+				"aaSorting": [
+					[1, "desc"]
+				], //默认第几个排序
+			});
 			function datadel(){
 				layer.confirm("确认删除?",{
 					icon:1
@@ -124,30 +122,12 @@
 					}
 				});
 			}
-			$('.table-sort').dataTable({
-				"aaSorting": [
-					[1, "desc"]
-				], //默认第几个排序
-			});
 			function sqzj_add(title,url,w,h){
 				layer.open({
 					type:2,
 					title:title,
 					content:url,
-					area:['800px', '520px'],
-					btn: ['提交','关闭'],
-					yes:function(index){
-						layer.close(index);
-						layer.msg('提交成功!',{icon:1,time:1000});
-					}
-				});
-			}
-			function sqzjmb_add(title,url,w,h){
-				layer.open({
-					type:2,
-					title:title,
-					content:url,
-					area:['800px', '320px'],
+					area:['800px', '450px'],
 					btn: ['提交','关闭'],
 					yes:function(index){
 						layer.close(index);
@@ -156,16 +136,16 @@
 				});
 			}
 
-			function sqzj_edit(title,url,w,h){
+			function zjsq_edit(title,url,w,h){
 				layer.open({
 					type:2,
 					title:title,
 					content:url,
-					area:['800px', '520px'],
+					area:['800px', '450px'],
 					btn: ['提交','关闭'],
 					yes:function(index){
 						layer.close(index);
-						layer.msg('修改成功!',{icon:1,time:1000});
+						layer.msg('提交成功!',{icon:1,time:1000});
 					}
 				});
 			}
@@ -190,13 +170,7 @@
 				});
 			}
 
-			function money_huabo(obj,id){
-				layer.confirm('确认要打印吗？',function(index){
-					$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未使用</span>');
-					//$(obj).remove();
-					layer.msg('正在打印',{icon: 6,time:1000});
-				});
-			}
+
 			function article_shenhe(obj, id) {
 				layer.confirm('确认要申请吗？',function(index){
 					$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已申请</span>');
